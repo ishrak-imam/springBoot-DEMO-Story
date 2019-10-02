@@ -1,4 +1,4 @@
-package com.example.story;
+package com.story;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

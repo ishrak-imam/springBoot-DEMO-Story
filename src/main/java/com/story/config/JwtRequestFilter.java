@@ -1,6 +1,5 @@
 package com.story.config;
 
-
 import com.story.service.JwtUserDetailsService;
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,8 +43,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 username = jwtTokenUtil.getUsernameFromToken(jwtToken);
             } catch (IllegalArgumentException e) {
                 System.out.println("Unable to get JWT Token");
-            }
-            catch (ExpiredJwtException e) {
+            } catch (ExpiredJwtException e) {
                 System.out.println("JWT Token has expired");
             }
         } else {

@@ -22,7 +22,6 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-//@RequestMapping("/api/v1")
 public class UserInfoController {
 
     @Autowired
@@ -48,7 +47,7 @@ public class UserInfoController {
 
         String username = user.getUsername();
         if(userInfoRepository.existsByUsername(username)) {
-            throw new ResourceConflictException("Username already exist");
+            throw new ResourceConflictException("Username " + "'" + username + "'" + " already taken.");
         }
 
         String password = user.getPassword();
